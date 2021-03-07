@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.FileProvider;
 import android.text.Editable;
@@ -40,6 +41,7 @@ import com.example.android.stockkeepingassistant.model.Warehouse;
 
 import java.io.File;
 import java.math.BigDecimal;
+import java.time.Duration;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -121,7 +123,7 @@ public class ProductFragment extends Fragment implements View.OnClickListener {
         });
 
         productCamera = view.findViewById(R.id.product_camera);
-        final Intent captureImage = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        final Intent captureImage = new Intent(/*MediaStore.ACTION_IMAGE_CAPTURE*/Intent.ACTION_PICK , android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         boolean canTakePhoto = photoFile != null &&
                 captureImage.resolveActivity(getActivity().getPackageManager()) != null;
         productCamera.setEnabled(canTakePhoto);
@@ -173,6 +175,7 @@ public class ProductFragment extends Fragment implements View.OnClickListener {
 
         product_save = view. findViewById(R.id.product_save);
         product_save.setOnClickListener(view1 -> {
+
             return;
         });
         orderMoreButton = view.findViewById(R.id.product_order_more);
