@@ -123,7 +123,7 @@ public class ProductFragment extends Fragment implements View.OnClickListener {
         });
 
         productCamera = view.findViewById(R.id.product_camera);
-        final Intent captureImage = new Intent(/*MediaStore.ACTION_IMAGE_CAPTURE*/Intent.ACTION_PICK , android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        final Intent captureImage = new Intent(MediaStore.ACTION_IMAGE_CAPTURE/*Intent.ACTION_PICK , android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI*/);
         boolean canTakePhoto = photoFile != null &&
                 captureImage.resolveActivity(getActivity().getPackageManager()) != null;
         productCamera.setEnabled(canTakePhoto);

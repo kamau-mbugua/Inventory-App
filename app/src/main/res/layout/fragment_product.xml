@@ -168,7 +168,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/top_margin_order_more_button"
-            android:text="@string/product_order_more_label" />
+            android:text="SAVE THE INVENTORY" />
 
         <!-- Button to order more from product supplier -->
         <Button
