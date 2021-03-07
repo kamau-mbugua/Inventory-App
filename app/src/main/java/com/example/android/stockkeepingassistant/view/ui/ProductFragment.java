@@ -57,7 +57,7 @@ public class ProductFragment extends Fragment implements View.OnClickListener {
     private EditText productPrice;
     private Spinner supplierName;
     private TextView supplierEmail;
-    private Button orderMoreButton;
+    private Button orderMoreButton, product_save;
     private Product product;
     private Warehouse warehouse;
     private File photoFile;
@@ -171,6 +171,10 @@ public class ProductFragment extends Fragment implements View.OnClickListener {
         supplierEmail = view.findViewById(R.id.product_supplier_email);
         setupSpinner();
 
+        product_save = view. findViewById(R.id.product_save);
+        product_save.setOnClickListener(view1 -> {
+            return;
+        });
         orderMoreButton = view.findViewById(R.id.product_order_more);
         orderMoreButton.setOnClickListener(v -> {
             Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
