@@ -176,6 +176,10 @@ public class ProductFragment extends Fragment implements View.OnClickListener {
         product_save = view. findViewById(R.id.product_save);
         product_save.setOnClickListener(view1 -> {
 
+            Toast.makeText(getActivity(), "SAVED!!!", Toast.LENGTH_SHORT).show();
+
+            startActivity(new Intent(getActivity(), CatalogActivity.class));
+
             return;
         });
         orderMoreButton = view.findViewById(R.id.product_order_more);
